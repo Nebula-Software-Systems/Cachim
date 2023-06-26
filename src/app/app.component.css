@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 2rem;
+}
+
+.cache-table
+{
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+.table-responsive-div{
+  padding: 150px 0px;
+}
+
+th, td {
+  padding: 0.25rem;
+}
