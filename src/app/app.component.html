@@ -5,7 +5,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let inMemory of inMemoryCache | keyvalue">
+    <tr *ngFor="let inMemory of inMemoryCache.cache| keyvalue">
       <td>{{ inMemory.key }}</td>
       <td>{{ inMemory.value }}</td>
     </tr>

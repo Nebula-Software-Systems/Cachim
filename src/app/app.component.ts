@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { InMemoryCacheService } from './services/in-memory-cache.service';
+import { InMemoryCache } from './models/in-memory-cache';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,15 @@ import { InMemoryCacheService } from './services/in-memory-cache.service';
 })
 export class AppComponent {
   title = 'Nebula.InMemoryVisualizer';
-  inMemoryCache: Map<string, string> = new Map<string, string>();
+  inMemoryCache: InMemoryCache = new InMemoryCache(new Map<string, string>());
 
   constructor(private inMemoryCacheService: InMemoryCacheService) {}
 
   ngOnInit(): void {
     this.inMemoryCacheService
       .getInMemoryCache()
-      .subscribe((result: Map<string, string>) => {
-        this.inMemoryCache = new Map(Object.entries(result));
+      .subscribe((result: InMemoryCache) => {
+        this.inMemoryCache = new InMemoryCache(new Map(Object.entries(result)));
       });
   }
 }

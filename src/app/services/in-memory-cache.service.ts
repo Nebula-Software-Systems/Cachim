@@ -12,9 +12,7 @@ export class InMemoryCacheService {
 
   constructor(private http: HttpClient) {}
 
-  public getInMemoryCache(): Observable<Map<string, string>> {
-    return this.http.get<Map<string, string>>(
-      `${environment.apiUrl}/${this.url}`
-    );
+  public getInMemoryCache(): Observable<InMemoryCache> {
+    return this.http.get<InMemoryCache>(`${environment.apiUrl}/${this.url}`);
   }
 }

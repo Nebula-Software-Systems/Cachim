@@ -1,9 +1,7 @@
 export class InMemoryCache {
-  key: string;
-  value: string;
+  cache: Map<string, string>;
 
-  constructor(key: string, value: string) {
-    this.key = key;
-    this.value = value;
+  constructor(cache: Map<string, string>) {
+    this.cache = cache;
   }
 }
