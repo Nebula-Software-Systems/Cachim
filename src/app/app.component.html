@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <th>Key</th>
+    <th>Value</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let inMemory of inMemoryCache | keyvalue">
+      <td>{{ inMemory.key }}</td>
+      <td>{{ inMemory.value }}</td>
+    </tr>
+  </tbody>
+
+</table>
