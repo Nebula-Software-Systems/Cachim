@@ -10,6 +10,19 @@ body {
   text-align: center;
 }
 
+.polling-dropdown{
+  position: relative;
+  display: inline-block;
+  left: 80%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
+.polling-dropdown span {
+  color: white;
+  margin-right: 0.5rem;
+}
+
 .table-responsive-div{
   padding: 150px 0px;
   background: rgb(2,0,36);

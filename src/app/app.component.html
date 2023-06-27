@@ -1,9 +1,20 @@
 <div class="table-responsive table-responsive-div">
+
+  <div class="polling-dropdown">
+    <span>Polling interval</span>
+    <select name="polling-intervals" #polling (change)="onSelected(polling.value)">
+      <option id="polling_10" value="10">10 seconds</option>
+      <option id="polling_30" value="30">30 seconds</option>
+      <option id="polling_60" value="60">60 seconds</option>
+    </select>
+  </div>
+
   <table class="table table-striped table-hover cache-table">
     <thead class="table-dark">
       <tr>
         <th scope="col">Key</th>
         <th scope="col">Value</th>
+        <th scope="col">Expiration</th>
       </tr>
     </thead>
 
@@ -11,6 +22,7 @@
       <tr *ngFor="let inMemory of inMemoryCache.cache| keyvalue">
         <td class="table-light">{{ inMemory.key }}</td>
         <td class="table-light">{{ inMemory.value }}</td>
+        <td class="table-light">Exp date</td>
       </tr>
     </tbody>
   </table>
