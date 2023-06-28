@@ -14,15 +14,15 @@
       <tr>
         <th scope="col">Key</th>
         <th scope="col">Value</th>
-        <th scope="col">Expiration</th>
+        <th scope="col">Expiration (hh:mm:ss)</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let inMemory of inMemoryCache.cache| keyvalue">
-        <td class="table-light">{{ inMemory.key }}</td>
-        <td class="table-light">{{ inMemory.value }}</td>
-        <td class="table-light">Exp date</td>
+      <tr *ngFor="let inMemory of inMemoryCache">
+        <td class="table-light">{{inMemory.key}}</td>
+        <td class="table-light">{{inMemory.value}}</td>
+        <td class="table-light">{{inMemory.expiration}}</td>
       </tr>
     </tbody>
   </table>

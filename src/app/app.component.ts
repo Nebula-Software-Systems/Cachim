@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InMemoryCacheService } from './services/in-memory-cache.service';
-import { InMemoryCache } from './models/in-memory-cache';
+import { InMemoryCacheRepresentation } from './models/in-memory-cache';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,11 @@ import { InMemoryCache } from './models/in-memory-cache';
 export class AppComponent {
   POLLING_DATA_LOCAL_STORAGE_KEY: string = 'polling';
   DEFAULT_POLLING_TIME_IN_SECONDS: number = 10;
+  SECONDS_TO_MILLISECONDS_CONVERSION = 1000;
   polling_time_in_seconds: number = this.DEFAULT_POLLING_TIME_IN_SECONDS;
   title = 'Nebula.InMemoryVisualizer';
-  inMemoryCache: InMemoryCache = new InMemoryCache(new Map<string, string>());
+  inMemoryCache: InMemoryCacheRepresentation[] =
+    new Array<InMemoryCacheRepresentation>();
 
   constructor(private inMemoryCacheService: InMemoryCacheService) {}
 
@@ -20,15 +22,12 @@ export class AppComponent {
     this.initPollingOption();
 
     setInterval(() => {
-      console.log('requesttttt');
       this.inMemoryCacheService
         .getInMemoryCache()
-        .subscribe((result: InMemoryCache) => {
-          this.inMemoryCache = new InMemoryCache(
-            new Map(Object.entries(result))
-          );
+        .subscribe((result: InMemoryCacheRepresentation[]) => {
+          this.inMemoryCache = result;
         });
-    }, this.polling_time_in_seconds * 1000);
+    }, this.polling_time_in_seconds * this.SECONDS_TO_MILLISECONDS_CONVERSION);
   }
 
   onSelected(value: string): void {
