@@ -42,7 +42,9 @@ export class AppComponent {
     } else {
       //use a default value for the polling
       (<HTMLOptionElement>(
-        document.getElementById(`polling_${pollingDuration}`)
+        document.getElementById(
+          `polling_${this.DEFAULT_POLLING_TIME_IN_SECONDS}`
+        )
       )).selected = true;
     }
   }
