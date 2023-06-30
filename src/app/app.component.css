@@ -31,6 +31,23 @@ html, body
   background: #000000;
   background: -webkit-linear-gradient(to right, #434343, #000000);
   background: linear-gradient(to right, #434343, #000000);
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.table-responsive-div tbody {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 400px;
+}
+.table-responsive-div thead tr {
+  display: block;
+}
+.table-responsive-div th,
+.table-responsive-div  td {
+  padding: 5px 10px;
+  width: 200px;
 }
 
 th, td {
