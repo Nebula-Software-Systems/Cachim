@@ -8,13 +8,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class InMemoryCacheService {
-  private url = 'InMemory';
-
   constructor(private http: HttpClient) {}
 
   public getInMemoryCache(): Observable<InMemoryCacheRepresentation[]> {
     return this.http.get<InMemoryCacheRepresentation[]>(
-      `${environment.apiUrl}/${this.url}`
+      `${environment.apiUrl}${environment.inMemoryCacheRetrievalEndpoint}`
     );
   }
 }

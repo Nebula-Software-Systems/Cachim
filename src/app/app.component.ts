@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InMemoryCacheService } from './services/in-memory-cache.service';
 import { InMemoryCacheRepresentation } from './models/in-memory-cache';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,8 @@ import { InMemoryCacheRepresentation } from './models/in-memory-cache';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  POLLING_DATA_LOCAL_STORAGE_KEY: string = 'polling';
-  DEFAULT_POLLING_TIME_IN_SECONDS: number = 10;
   SECONDS_TO_MILLISECONDS_CONVERSION = 1000;
-  polling_time_in_seconds: number = this.DEFAULT_POLLING_TIME_IN_SECONDS;
+  polling_time_in_seconds: number = environment.defaultPollingIntervalInSeconds;
   title = 'Nebula.InMemoryVisualizer';
   inMemoryCache: InMemoryCacheRepresentation[] =
     new Array<InMemoryCacheRepresentation>();
@@ -25,12 +24,12 @@ export class AppComponent {
   }
 
   onSelected(value: string): void {
-    localStorage.setItem(this.POLLING_DATA_LOCAL_STORAGE_KEY, value);
+    localStorage.setItem(environment.localStoragePollingKey, value);
   }
 
   private initPollingOption() {
     let pollingDuration = localStorage.getItem(
-      this.POLLING_DATA_LOCAL_STORAGE_KEY
+      environment.localStoragePollingKey
     ) as number | null;
 
     if (pollingDuration) {
@@ -43,7 +42,7 @@ export class AppComponent {
       //use a default value for the polling
       (<HTMLOptionElement>(
         document.getElementById(
-          `polling_${this.DEFAULT_POLLING_TIME_IN_SECONDS}`
+          `polling_${environment.defaultPollingIntervalInSeconds}`
         )
       )).selected = true;
     }
