@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+    in.memory.visualizer:
+      image: in-memory-visualizer
+      container_name: inmemoryvisualizer
+      restart: always
+      ports:
+        - "4200:80"
+      build:
+        context: .
+        args:
+        - ENV_TO_RUN=development
+        dockerfile: Dockerfile
