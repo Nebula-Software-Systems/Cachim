@@ -1,27 +1,62 @@
-# NebulaInMemoryVisualizer
+<h1 align="center">
+  Nebula.InMemoryVisualizer
+</h1>
+<p align="center">
+  Simplify the visualization of your In-Memory cache.
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+<p align="center">
+  <img src="./docs/media/MainPage.png" />
+</p>
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Most programming languages give you the possibility of having In-Memory cache, but there's a lack of tools that may allow you to visualize the content of such cache.
 
-## Code scaffolding
+Nebula.Caching is an Open-Source project that aims at allowing you to have a way to visualize the contents of your In-Memory cache.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to run the project
 
-## Build
+### Via console
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+When inside src/src/ directory, you can run the following command:
+```console
+ng serve --configuration=<environment> --open
+```
+Currently, you can specify two values for the environment (to replace in the previous command):
+- development: will have in consideration the variables defined in *environment.development.ts*
+- production (default value assumed is nothing is passed on) : will have in consideration the variables defined in *environment.ts*
 
-## Running unit tests
+### Via Docker
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Inside our src/ folder we have our Dockerfile and our docker-compose file.
 
-## Running end-to-end tests
+To start the project via Docker, you just need to run the following command:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```console
+docker-compose up -d
+```
 
-## Further help
+## Documentation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Our documentation can be found [here](docs/documentation/).
+
+## Samples
+
+Some useful code snippets can be found [here](docs/samples/).
+
+## Contributing
+
+This project welcomes and appreciates any contributions made.
+
+There are several ways you can contribute, namely:
+
+- Report any bug found.
+- Suggest some features or improvements.
+- Creating pull requests.
+
+## License
+
+Nebula.Caching is a free and open-source software licensed under the MIT License.
+
+See [LICENSE](LICENSE) for more details.
