@@ -19,7 +19,7 @@ Nebula.Caching is an Open-Source project that aims at allowing you to have a way
 
 ### Via console
 
-When inside src/src/ directory, you can run the following command:
+When inside src/ directory, you can run the following command:
 ```console
 ng serve --configuration=<environment> --open
 ```
