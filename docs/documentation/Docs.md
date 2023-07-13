@@ -26,4 +26,5 @@ The interval duration from which the frontend will ask the backend for the curre
 For example, if this value is 10 (seconds), your frontend will, every 10 seconds, ask the backend for the new in-memory cache and then render it.
 One must be very careful with the value inserted here, so that we don't overload our system with these requests.
 The value you can put here is one of the following:
-<img src="../media/PollingIntervalOptions.png />
+
+![List of polling intervals, 10 seconds, 30 seconds and 60 seconds](../media/PollingIntervalOptions.png)
