@@ -25,3 +25,5 @@ This key is used to store your polling preferences, so that whenever you refresh
 The interval duration from which the frontend will ask the backend for the current existing cache.
 For example, if this value is 10 (seconds), your frontend will, every 10 seconds, ask the backend for the new in-memory cache and then render it.
 One must be very careful with the value inserted here, so that we don't overload our system with these requests.
+The value you can put here is one of the following:
+<img src="../media/PollingIntervalOptions.png />
