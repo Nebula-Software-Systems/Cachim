@@ -2,10 +2,11 @@
 
 ## Environment configuration
 
-As mentioned in the [wiki](../../README.md#via-console), we can specify the environment where the project will rrun at.
+As mentioned in the [wiki](../../README.md#via-console), we can specify the environment where the project will run at.
 This decision will impact the variable values that will be use.
 
-Next, we present the currently environment variables that we use, which you can see in the project *under environment.<supported_environmente>.ts*.
+Next, we present the currently environment variables that we use, which you can see in the project under 
+*environment.<supported_environmente>.ts*.
 
 ### apiUrl
 This is the root URL of your backend application, where the in-memory cache data will be retrieved.
